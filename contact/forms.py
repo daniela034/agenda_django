@@ -16,6 +16,9 @@ class ContactForm(forms.ModelForm):
         label='First Name - forms',
         help_text='Help text for user',
     )
+    picture = forms.ImageField(
+        widget=forms.FileInput(attrs={'accept':'image/*'})
+    )
     def __init__(self, *args, **kwargs): 
         super().__init__(*args, **kwargs)
         
@@ -26,7 +29,7 @@ class ContactForm(forms.ModelForm):
     class Meta: 
         model = Contact
         fields = ('first_name', 'last_name', 'phone',
-                  'email', 'description', 'category',)
+                  'email', 'description', 'category','picture',)
         
         #widgets = {
         #    'first_name' : forms.TextInput(
