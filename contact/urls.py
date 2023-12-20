@@ -5,5 +5,12 @@ from contact import views
 app_name = 'contact'
 
 urlpatterns = [
-    path('', views.index, name='index')
+    path('search/', views.search, name ='search'),
+    path('', views.index, name='index'), 
+    
+    # quando são paginas dinâmicas por exemplo para o contacto 
+    # usamos o CRUD
+    path('contact/<int:contact_id>/', views.contact, name='contact'), # leitura
+    path('contact/create/', views.create, name='create')
+    
 ]
