@@ -21,7 +21,7 @@ class ContactForm(forms.ModelForm):
         help_text='Help text for user',
     )
     picture = forms.ImageField(
-        widget=forms.FileInput(attrs={'accept':'image/*'})
+        widget=forms.FileInput(attrs={'accept':'image/*'}), required=False
     )
     def __init__(self, *args, **kwargs): 
         super().__init__(*args, **kwargs)
