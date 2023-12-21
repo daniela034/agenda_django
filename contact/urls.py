@@ -15,5 +15,7 @@ urlpatterns = [
     path('contact/<int:contact_id>/update/', views.update, name='update'), # update do contacto 
     path('contact/<int:contact_id>/delete/', views.delete, name='delete'), # update do contacto 
 
-    
+    # user
+    path('user/create/', views.register, name='register'), 
+
 ]
